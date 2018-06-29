@@ -5,6 +5,8 @@
  * |    Author: 向军大叔 <2300071698@qq.com>
  * '-------------------------------------------------------------------*/
 return [
-    //保存目录
-    'path' => 'app',
+    //上传事件监听器
+    'listener' => function () {
+        return \Houdunwang\LaravelUpload\Listeners\FileListener::class;
+    },
 ];
