@@ -50,19 +50,18 @@ protected $subscribe = [
 在控制器中调用分发事件 `UploadEvent` ，系统会根据配置项中设置的事件处理器完成上传。
 
 ```
-<?php
+<?php namespace App\Http\Controllers;
 
-namespace App\Http\Controllers;
-use App\ArticleCategory;
 use Houdunwang\LaravelUpload\Events\UploadEvent;
+use Illuminate\Http\Request;
 
-class UploadController extends Controller
+class VueFormController extends Controller
 {
-    public function make(\Request $request)
-    {
-        $uploadEvent = new UploadEvent($request->file);
-        event($uploadEvent);
-        echo "上传成功的文件：".$uploadEvent['file'];
+    public function upload(Request $request){
+        $event = new UploadEvent($request->file('file'));
+        event($event);
+        ##上传成功的文件y
+        dd($event->getFile());
     }
 }
 ```

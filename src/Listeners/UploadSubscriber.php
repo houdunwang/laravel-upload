@@ -13,6 +13,6 @@ class UploadSubscriber
 {
     public function subscribe($events)
     {
-        $events->listen(UploadEvent::class, config('hd_upload.listener'));
+        $events->listen(UploadEvent::class, config('hd_upload.listener')());
     }
 }

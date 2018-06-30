@@ -18,13 +18,6 @@ class ServiceProvider extends BaseServiceProvider
      */
     public function boot()
     {
-        //命令声明
-        if ($this->app->runningInConsole()) {
-            $this->commands([
-                UploadCommand::class
-            ]);
-        }
-
         //配置文件
         $this->publishes([
             __DIR__.'/config/hd_upload.php' => config_path('hd_upload.php'),

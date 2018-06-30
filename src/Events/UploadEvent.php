@@ -18,7 +18,7 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 class UploadEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-    protected $path;
+    protected $request;
     protected $file;
 
     /**
@@ -26,9 +26,9 @@ class UploadEvent
      *
      * @return void
      */
-    public function __construct( $file)
+    public function __construct( $request)
     {
-        $this->file = $file;
+        $this->request = $request;
     }
 
     /**
@@ -37,6 +37,22 @@ class UploadEvent
     public function getFile()
     {
         return $this->file;
+    }
+
+    /**
+     * @param mixed $file
+     */
+    public function setFile($file): void
+    {
+        $this->file = $file;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRequest()
+    {
+        return $this->request;
     }
 
 

@@ -30,11 +30,12 @@ class FileListener
      */
     public function handle(UploadEvent $event)
     {
-        $file = $event->getFile();
-        if ( ! $file) {
+        if ( ! $request = $event->getRequest()) {
             return false;
         }
-        $fileName = str_random(10).microtime(true).'.'.$file->getClientOriginalExtension();
-        $file->move('uploads/'.date('ym/d'),$fileName);
+        $fileName = str_random(10).microtime(true).'.'.$request->getClientOriginalExtension();
+        $saveDir = 'uploads/'.date('ym/d');
+        $request->move($saveDir, $fileName);
+        $event->setFile($saveDir.'/'.$fileName);
     }
 }
