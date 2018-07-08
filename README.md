@@ -11,7 +11,7 @@
 ### 安装组件
 
 ```
-composer require houdunwang/laravel-upload:dev-master  
+composer require houdunwang/laravel-upload
 ```
 
 ### 生成配置文件
