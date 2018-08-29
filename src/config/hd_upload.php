@@ -6,7 +6,7 @@
  * '-------------------------------------------------------------------*/
 return [
     //上传事件监听器
-    'listener' => function () {
+    'listener'     => function () {
         return \Houdunwang\LaravelUpload\Listeners\FileListener::class;
     },
 ];

@@ -22,6 +22,6 @@ class UploadException extends Exception
 
     public function render($request)
     {
-        return ['message' => $this->message, [], 'code' => $this->code];
+        return ['message' => $this->message, 'code' => $this->code];
     }
 }

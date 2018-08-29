@@ -19,7 +19,19 @@ composer require houdunwang/laravel-upload
 ```
 php artisan vendor:publish"
 ```
-组件会生成配置文件 `config/hd_upload.php` 文件
+组件会生成配置文件 `config/hd_upload.php` 文件，内容如下：
+
+```
+<?php
+return [
+    //上传事件监听器，比如使用 文件或阿里云OSS处理上传
+    'listener'     => function () {
+        return \Houdunwang\LaravelUpload\Listeners\FileListener::class;
+    },
+];
+```
+
+
 
 **配置荐说明**
 
