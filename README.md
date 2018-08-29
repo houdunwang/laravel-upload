@@ -17,7 +17,7 @@ composer require houdunwang/laravel-upload
 ### 生成配置文件
 
 ```
-php artisan vendor:publish --provider="Houdunwang\LaravelUpload\ServiceProvider"
+php artisan vendor:publish"
 ```
 组件会生成配置文件 `config/hd_upload.php` 文件
 
